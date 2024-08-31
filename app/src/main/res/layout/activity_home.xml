@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".HomeActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -108,6 +108,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_view_menu">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/placement"
+                android:scaleType="centerCrop"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -132,6 +138,11 @@
             app:layout_constraintTop_toBottomOf="@id/text_view_menu"
             app:layout_constraintTop_toTopOf="@id/card_view_placements">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/hackathon"
+                android:scaleType="centerCrop"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -156,7 +167,12 @@
             app:layout_constraintTop_toBottomOf="@id/text_view_menu"
             app:layout_constraintTop_toTopOf="@id/card_view_hackathons">
 
-
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/training"
+                android:scaleType="centerCrop"/>
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -181,7 +197,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_view_placements">
 
-
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/higher_education"
+                android:scaleType="centerCrop"/>
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -206,6 +227,12 @@
             app:layout_constraintTop_toBottomOf="@id/text_view_menu"
             app:layout_constraintTop_toTopOf="@id/card_view_higher_education">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/internship"
+                android:scaleType="centerCrop"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -218,29 +245,6 @@
             app:layout_constraintStart_toStartOf="@id/card_view_internships"
             app:layout_constraintTop_toBottomOf="@id/card_view_internships" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_View_alumni"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="6dp"
-            app:cardMaxElevation="50dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/card_view_hackathons"
-            app:layout_constraintTop_toBottomOf="@id/text_view_menu"
-            app:layout_constraintTop_toTopOf="@id/card_view_internships">
-
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            style="@style/BottomTitles"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alumni"
-            app:layout_constraintEnd_toEndOf="@id/card_View_alumni"
-            app:layout_constraintStart_toStartOf="@id/card_View_alumni"
-            app:layout_constraintTop_toBottomOf="@id/card_View_alumni" />
 
         <TextView
             android:id="@+id/text_view_iiic_events"

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".FormActivity">
+
+        <TextView
+            android:id="@+id/text_view_fill_out_the_form"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Fill out the form"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_fill_out_the_form" />
+
+        <TextView
+            android:id="@+id/text_view_personal_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="sans-serif"
+            android:text="Personal Information"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view" />
+
+        <TextView
+            android:id="@+id/text_view_name"
+            style="@style/PersonalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_personal_info" />
+
+        <EditText
+            android:id="@+id/edit_text_first_name"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:padding="12dp"
+            android:textSize="12sp"
+            android:background="@drawable/outline"
+            app:layout_constraintStart_toStartOf="@id/text_view_name"
+            app:layout_constraintTop_toBottomOf="@id/text_view_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="First Name"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/edit_text_first_name"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_first_name" />
+
+        <EditText
+            android:id="@+id/edit_text_last_name"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="24dp"
+            android:padding="12dp"
+            android:background="@drawable/outline"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/edit_text_first_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Name"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/edit_text_last_name"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_last_name" />
+
+        <TextView
+            android:id="@+id/text_view_address"
+            style="@style/PersonalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_first_name" />
+
+        <EditText
+            android:id="@+id/edit_text_address"
+            android:layout_width="310dp"
+            android:layout_height="40dp"
+            android:background="@drawable/outline"
+            android:padding="12dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/text_view_address"
+            app:layout_constraintTop_toBottomOf="@id/text_view_address" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Street Address"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/edit_text_address"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_address" />
+
+        <EditText
+            android:id="@+id/edit_text_address2"
+            android:layout_width="310dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:padding="12dp"
+            android:textSize="12sp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/outline"
+            app:layout_constraintStart_toStartOf="@id/edit_text_address"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_address" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Street Address 2"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/edit_text_address2"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_address2" />
+
+        <EditText
+            android:id="@+id/edit_text_city"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:padding="12dp"
+            android:layout_marginTop="24dp"
+            android:textSize="12sp"
+            android:background="@drawable/outline"
+            app:layout_constraintStart_toStartOf="@id/edit_text_address2"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_address2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/edit_text_city"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_city" />
+
+        <EditText
+            android:id="@+id/edit_text_state"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="24dp"
+            android:padding="12dp"
+            android:textSize="12sp"
+            android:background="@drawable/outline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/edit_text_city" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="State"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/edit_text_state"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_state" />
+
+        <EditText
+            android:id="@+id/edit_text_postal_code"
+            android:layout_width="310dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:inputType="number"
+            android:padding="12dp"
+            android:textSize="12sp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/outline"
+            app:layout_constraintStart_toStartOf="@id/edit_text_city"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_city" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Postal/Zip code"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/edit_text_postal_code"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_postal_code" />
+
+        <TextView
+            android:id="@+id/text_view_phone"
+            style="@style/PersonalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Phone Number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_postal_code" />
+
+        <EditText
+            android:id="@+id/edit_text_phone_number"
+            android:layout_width="150dp"
+            android:padding="12dp"
+            android:layout_height="40dp"
+            android:inputType="phone"
+            android:background="@drawable/outline"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/text_view_phone"
+            app:layout_constraintTop_toBottomOf="@id/text_view_phone" />
+
+        <TextView
+            android:id="@+id/text_view_alt_phone"
+            style="@style/PersonalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alternative Number"
+            app:layout_constraintStart_toStartOf="@id/edit_text_alternative_number"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_postal_code" />
+
+        <EditText
+            android:id="@+id/edit_text_alternative_number"
+            android:layout_width="150dp"
+            android:padding="12dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="24dp"
+            android:inputType="phone"
+            android:textSize="12sp"
+            android:background="@drawable/outline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/edit_text_phone_number" />
+
+        <TextView
+            android:id="@+id/text_view_email_id_form"
+            style="@style/PersonalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_phone_number" />
+
+        <EditText
+            android:id="@+id/edit_text_email_form"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:textSize="12sp"
+            android:background="@drawable/outline"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="@id/text_view_email_id_form"
+            app:layout_constraintTop_toBottomOf="@id/text_view_email_id_form" />
+
+        <TextView
+            android:id="@+id/text_view_dob"
+            style="@style/PersonalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date-Of-Birth"
+            app:layout_constraintStart_toStartOf="@id/edit_text_dob"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_alternative_number" />
+
+        <EditText
+            android:id="@+id/edit_text_dob"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:textSize="12sp"
+            android:layout_marginEnd="24dp"
+            android:inputType="date"
+            android:background="@drawable/outline"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/edit_text_email_form" />
+
+        <TextView
+            android:id="@+id/text_view_resume"
+            style="@style/PersonalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Please upload your resume"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_email_form" />
+
+        <ImageView
+            android:layout_width="310dp"
+            android:layout_height="110dp"
+            android:id="@+id/image_view_resume"
+            android:scaleType="centerCrop"
+            android:src="@drawable/upload"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_resume"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_save"
+            app:layout_constraintTop_toBottomOf="@id/image_view_resume"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="32dp"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

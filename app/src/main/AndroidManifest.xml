@@ -12,6 +12,18 @@
         android:theme="@style/Theme.CareerConnect"
         tools:targetApi="31">
         <activity
+            android:name=".InfoViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HackathonsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
             android:name=".InfoActivity"
             android:exported="false" />
         <activity

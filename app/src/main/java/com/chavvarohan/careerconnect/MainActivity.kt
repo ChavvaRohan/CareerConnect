@@ -14,6 +14,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        startActivity(Intent(this, HomeActivity::class.java))
+        binding.buttonSignIn.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
+
+        binding.textViewRegister.setOnClickListener {
+            startActivity(Intent(this,SignUpActivity::class.java))
+        }
+
     }
 }

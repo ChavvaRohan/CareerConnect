@@ -22,5 +22,13 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, PlacementsActivity::class.java))
         }
 
+        binding.cardViewProfilePic.setOnClickListener {
+            startActivity(Intent(this,FormActivity::class.java))
+        }
+
+        binding.cardViewHackathons.setOnClickListener {
+            startActivity(Intent(this,HackathonsActivity::class.java))
+        }
+
     }
 }
