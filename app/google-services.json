@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "388768164411",
+    "project_id": "careerconnect-20971",
+    "storage_bucket": "careerconnect-20971.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388768164411:android:0bd26419f21cd851a00a1e",
+        "android_client_info": {
+          "package_name": "com.chavvarohan.careerconnect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5mr3686x0H-4rUJQFwJfly5ewxPVQ2co"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

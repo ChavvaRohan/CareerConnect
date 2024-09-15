@@ -31,11 +31,11 @@
             android:background="@drawable/edit_text_design"
             android:drawableStart="@drawable/baseline_email_24"
             android:drawablePadding="8dp"
-            android:padding="12dp"
             android:fontFamily="sans-serif"
-            android:textColor="@color/black"
             android:hint="Email"
             android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/image_view_logo" />
@@ -48,12 +48,12 @@
             android:layout_marginTop="22dp"
             android:layout_marginEnd="18dp"
             android:background="@drawable/edit_text_design"
+            android:cursorVisible="true"
             android:drawableStart="@drawable/baseline_password_24"
             android:drawablePadding="8dp"
-            android:padding="12dp"
             android:hint="Password"
-            android:cursorVisible="true"
             android:inputType="textPassword"
+            android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edit_text_email" />
@@ -71,17 +71,27 @@
             app:layout_constraintTop_toBottomOf="@id/edit_text_password" />
 
         <Button
-            android:id="@+id/button_sign_in"
-            android:layout_width="match_parent"
+            android:id="@+id/button_admin"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="32dp"
             android:background="@drawable/button_style"
-            android:text="Sign in"
+            android:text="Admin"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toStartOf="@id/button_sign_in"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_password"
+            app:layout_constraintTop_toTopOf="@id/button_sign_in" />
+
+        <Button
+            android:id="@+id/button_sign_in"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/button_style"
+            android:text="Student"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_admin"
             app:layout_constraintTop_toBottomOf="@id/edit_text_password" />
 
         <LinearLayout

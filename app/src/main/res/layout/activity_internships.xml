@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HackathonsActivity">
+    tools:context=".HigherEducationActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/baseline_arrow_back_ios_24"
         app:navigationIconTint="@color/black"
-        app:title="Hackathons" />
+        app:title="Internships" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_hackathon"

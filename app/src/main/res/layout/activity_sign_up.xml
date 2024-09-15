@@ -33,7 +33,7 @@
             android:drawableStart="@drawable/baseline_person_24"
             android:drawablePadding="8dp"
             android:hint="Name"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

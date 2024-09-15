@@ -14,7 +14,6 @@ class Adapter(private val data: List<Data>) : RecyclerView.Adapter<Adapter.DataV
 
         fun onRegisterClick(position: Int)
 
-        fun onInfoClick(position: Int)
     }
 
     fun setOnItemClickListener(listener: OnItemClickListener) {
@@ -40,12 +39,6 @@ class Adapter(private val data: List<Data>) : RecyclerView.Adapter<Adapter.DataV
     ) : RecyclerView.ViewHolder(binding.root) {
 
         init {
-            binding.imageViewInfo.setOnClickListener{
-                val position = adapterPosition
-                if (position != RecyclerView.NO_POSITION) {
-                    listener?.onInfoClick(position)
-                }
-            }
 
             binding.cardViewRegister.setOnClickListener {
                 val position = adapterPosition

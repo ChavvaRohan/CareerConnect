@@ -30,5 +30,22 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this,HackathonsActivity::class.java))
         }
 
+        binding.imageViewSettings.setOnClickListener{
+            startActivity(Intent(this,SettingsActivity::class.java))
+
+        }
+
+        binding.cardViewTrainings.setOnClickListener {
+            startActivity(Intent(this,TrainingActivity::class.java))
+        }
+
+        binding.cardViewHigherEducation.setOnClickListener {
+            startActivity(Intent(this,HigherEducationActivity::class.java))
+        }
+
+        binding.cardViewInternships.setOnClickListener {
+            startActivity(Intent(this,InternshipsActivity::class.java))
+        }
+
     }
 }

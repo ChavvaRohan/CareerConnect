@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,6 +14,51 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CareerConnect"
         tools:targetApi="31">
+        <activity
+            android:name=".InternshipsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HigherEducationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TrainingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewInternshipUploadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InternshipAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewHigherEducationUploadsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HigherEducationAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewTrainingUploadsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TrainingAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewUploadsAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HackathonsAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlacementsAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EventsAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
         <activity
             android:name=".InfoViewActivity"
             android:exported="false" />

@@ -3,32 +3,33 @@ package com.chavvarohan.careerconnect
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.chavvarohan.careerconnect.databinding.ActivityHackathonsBinding
+import com.chavvarohan.careerconnect.databinding.ActivityHigherEducationBinding
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import com.google.firebase.firestore.ktx.toObject
 
-class HackathonsActivity : AppCompatActivity() {
+class HigherEducationActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityHackathonsBinding
+    private lateinit var binding : ActivityHigherEducationBinding
+
     private lateinit var firestore: FirebaseFirestore
     private lateinit var adapter: Adapter2
-    private val hackathonList = mutableListOf<Info>()
+    private val trainingList = mutableListOf<Info>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHackathonsBinding.inflate(layoutInflater)
+        binding = ActivityHigherEducationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize Firestore
         firestore = FirebaseFirestore.getInstance()
 
         // Setting up the RecyclerView
-        adapter = Adapter2(hackathonList)
+        adapter = Adapter2(trainingList)
         binding.recyclerViewHackathon.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewHackathon.adapter = adapter
 
@@ -38,11 +39,12 @@ class HackathonsActivity : AppCompatActivity() {
             it.setDisplayShowHomeEnabled(true)
         }
         // Fetch data from Firestore
-        fetchHackathonData()
+        fetchHigherEducationData()
+
     }
 
-    private fun fetchHackathonData() {
-        firestore.collection("hackathons")
+    private fun fetchHigherEducationData() {
+        firestore.collection("higherEducation")
             .orderBy("timestamp", Query.Direction.DESCENDING) // Ensure this matches the field in Firestore
             .get()
             .addOnSuccessListener { querySnapshot ->
@@ -59,18 +61,18 @@ class HackathonsActivity : AppCompatActivity() {
                     hackathonList.add(item)
 
                     // Log each item fetched
-                    Log.d("HackathonsActivity", "Fetched item: $item")
+                    Log.d("HigherEducationActivity", "Fetched item: $item")
                 }
 
                 if (hackathonList.isEmpty()) {
-                    Log.d("HackathonsActivity", "No items found")
+                    Log.d("HigherEducationActivity", "No items found")
                 }
 
                 adapter.updateData(hackathonList)
 
             }
             .addOnFailureListener { exception ->
-                Log.e("HackathonsActivity", "Error fetching data: ", exception)
+                Log.e("HigherEducationActivity", "Error fetching data: ", exception)
                 Toast.makeText(this, "Failed to fetch data: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
     }
@@ -82,5 +84,5 @@ class HackathonsActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-    
+
 }

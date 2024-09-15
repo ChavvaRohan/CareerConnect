@@ -3,7 +3,9 @@ package com.chavvarohan.careerconnect
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.chavvarohan.careerconnect.databinding.ActivityInfoViewBinding
 
 class InfoViewActivity : AppCompatActivity() {
@@ -17,23 +19,32 @@ class InfoViewActivity : AppCompatActivity() {
 
         // Retrieve data from the intent
         val title = intent.getStringExtra("title")
-        val offeredBy = intent.getStringExtra("offeredBy")
+        val date = intent.getStringExtra("date")
         val description = intent.getStringExtra("description")
-        val image = intent.getStringExtra("image")
-        val link = intent.getStringExtra("link")  // Get the link
+        val imageUrl = intent.getStringExtra("image")  // Changed to string for URL
+        val link = intent.getStringExtra("link")
 
         // Set data to views
         binding.title.text = title
-        binding.offeredBy.text = offeredBy
+        binding.date.text = date
         binding.description.text = description
 
-        // Load image into ImageView
-        binding.image.setImageResource(R.color.black)
+        // Load image using Glide
+        if (imageUrl != null) {
+            Glide.with(this)
+                .load(imageUrl)
+                .placeholder(R.drawable.placeholder)  // Placeholder while image loads
+                .error(R.drawable.placeholder)  // Fallback if the image fails to load
+                .into(binding.image)
+        } else {
+            binding.image.setImageResource(R.drawable.placeholder)  // Fallback if no imageUrl is provided
+        }
 
         // Set up the button click listener to open the link
         binding.register.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
             startActivity(intent)
         }
+
     }
 }
