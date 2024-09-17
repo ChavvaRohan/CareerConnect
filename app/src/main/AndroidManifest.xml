@@ -15,73 +15,73 @@
         android:theme="@style/Theme.CareerConnect"
         tools:targetApi="31">
         <activity
-            android:name=".InternshipsActivity"
+            android:name=".user.InternshipsActivity"
             android:exported="false" />
         <activity
-            android:name=".HigherEducationActivity"
+            android:name=".user.HigherEducationActivity"
             android:exported="false" />
         <activity
-            android:name=".TrainingActivity"
+            android:name=".user.TrainingActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewInternshipUploadActivity"
+            android:name=".admin.ViewInternshipUploadActivity"
             android:exported="false" />
         <activity
-            android:name=".InternshipAdminActivity"
+            android:name=".admin.InternshipAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewHigherEducationUploadsActivity"
+            android:name=".admin.ViewHigherEducationUploadsActivity"
             android:exported="false" />
         <activity
-            android:name=".HigherEducationAdminActivity"
+            android:name=".admin.HigherEducationAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewTrainingUploadsActivity"
+            android:name=".admin.ViewTrainingUploadsActivity"
             android:exported="false" />
         <activity
-            android:name=".TrainingAdminActivity"
+            android:name=".admin.TrainingAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewUploadsAdminActivity"
+            android:name=".admin.ViewUploadsAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".HackathonsAdminActivity"
+            android:name=".admin.HackathonsAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".PlacementsAdminActivity"
+            android:name=".user.PlacementsAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".EventsAdminActivity"
+            android:name=".admin.EventsAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminActivity"
+            android:name=".admin.AdminActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".user.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".InfoViewActivity"
+            android:name=".user.InfoViewActivity"
             android:exported="false" />
         <activity
-            android:name=".HackathonsActivity"
+            android:name=".user.HackathonsActivity"
             android:exported="false" />
         <activity
-            android:name=".FormActivity"
+            android:name=".user.FormActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".user.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".InfoActivity"
+            android:name=".user.InfoActivity"
             android:exported="false" />
         <activity
-            android:name=".ApplyActivity"
+            android:name=".user.ApplyActivity"
             android:exported="false" />
         <activity
-            android:name=".PlacementsActivity"
+            android:name=".user.PlacementsActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".user.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

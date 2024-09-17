@@ -1,10 +1,7 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.user
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.chavvarohan.careerconnect.databinding.ActivityPlacementsAdminBinding
 
 class PlacementsAdminActivity : AppCompatActivity() {

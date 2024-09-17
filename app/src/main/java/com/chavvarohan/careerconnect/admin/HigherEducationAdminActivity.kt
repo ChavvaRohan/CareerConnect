@@ -1,4 +1,4 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.admin
 
 import android.content.Intent
 import android.net.Uri
@@ -7,22 +7,20 @@ import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.chavvarohan.careerconnect.databinding.ActivityInternshipAdminBinding
+import com.chavvarohan.careerconnect.R
+import com.chavvarohan.careerconnect.databinding.ActivityHigherEducationAdminBinding
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.storage
 import java.util.UUID
 
-class InternshipAdminActivity : AppCompatActivity() {
+class HigherEducationAdminActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityInternshipAdminBinding
+    private lateinit var binding : ActivityHigherEducationAdminBinding
 
     private lateinit var storageRef: StorageReference
 
@@ -32,7 +30,7 @@ class InternshipAdminActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityInternshipAdminBinding.inflate(layoutInflater)
+        binding = ActivityHigherEducationAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         storageRef = Firebase.storage.reference
@@ -54,7 +52,7 @@ class InternshipAdminActivity : AppCompatActivity() {
         }
 
         binding.buttonViewUploads.setOnClickListener {
-            val intent = Intent(this, ViewInternshipUploadActivity::class.java)
+            val intent = Intent(this, ViewHigherEducationUploadsActivity::class.java)
             startActivity(intent)
         }
 
@@ -74,7 +72,7 @@ class InternshipAdminActivity : AppCompatActivity() {
     }
 
     private fun alertDialog() {
-        AlertDialog.Builder(this@InternshipAdminActivity)
+        AlertDialog.Builder(this@HigherEducationAdminActivity)
             .setTitle("Upload")
             .setMessage("Are you sure you want to upload ?")
             .setPositiveButton("Yes") { _, _ ->
@@ -161,7 +159,7 @@ class InternshipAdminActivity : AppCompatActivity() {
 
         )
 
-        db.collection("internship")
+        db.collection("higherEducation")
             .add(hackathonData)
             .addOnSuccessListener {
                 Log.d("Firestore", "Data saved successfully")
@@ -177,7 +175,7 @@ class InternshipAdminActivity : AppCompatActivity() {
                 Log.d("Firestore", "Error saving data")
                 Toast.makeText(
                     this,
-                    "Failed to save internship: ${exception.message}",
+                    "Failed to save announcement: ${exception.message}",
                     Toast.LENGTH_SHORT
                 ).show()
             }

@@ -1,4 +1,4 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.admin
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.chavvarohan.careerconnect.user.Info
 import com.chavvarohan.careerconnect.databinding.ActivityViewUploadsAdminBinding
 import com.google.firebase.firestore.FirebaseFirestore
 

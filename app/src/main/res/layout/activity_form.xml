@@ -10,7 +10,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".FormActivity">
+        tools:context=".user.FormActivity">
 
         <TextView
             android:id="@+id/text_view_fill_out_the_form"

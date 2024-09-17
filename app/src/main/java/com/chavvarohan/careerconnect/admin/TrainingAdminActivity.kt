@@ -1,7 +1,6 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.admin
 
 import android.content.Intent
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -11,18 +10,17 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.chavvarohan.careerconnect.databinding.ActivityHackathonsAdminBinding
+import com.chavvarohan.careerconnect.R
+import com.chavvarohan.careerconnect.databinding.ActivityTrainingAdminBinding
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.firestore
-import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.storage
 import java.util.UUID
 
-class HackathonsAdminActivity : AppCompatActivity() {
+class TrainingAdminActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityHackathonsAdminBinding
+    private lateinit var binding : ActivityTrainingAdminBinding
 
     private lateinit var storageRef: StorageReference
 
@@ -32,7 +30,7 @@ class HackathonsAdminActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHackathonsAdminBinding.inflate(layoutInflater)
+        binding = ActivityTrainingAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         storageRef = Firebase.storage.reference
@@ -54,7 +52,7 @@ class HackathonsAdminActivity : AppCompatActivity() {
         }
 
         binding.buttonViewUploads.setOnClickListener {
-            val intent = Intent(this, ViewUploadsAdminActivity::class.java)
+            val intent = Intent(this, ViewTrainingUploadsActivity::class.java)
             startActivity(intent)
         }
 
@@ -63,8 +61,8 @@ class HackathonsAdminActivity : AppCompatActivity() {
             it.setDisplayHomeAsUpEnabled(true)
             it.setDisplayShowHomeEnabled(true)
         }
-    }
 
+    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             finish()
@@ -73,7 +71,7 @@ class HackathonsAdminActivity : AppCompatActivity() {
     }
 
     private fun alertDialog() {
-        AlertDialog.Builder(this@HackathonsAdminActivity)
+        AlertDialog.Builder(this@TrainingAdminActivity)
             .setTitle("Upload Hackathon")
             .setMessage("Are you sure you want to upload this hackathon?")
             .setPositiveButton("Yes") { _, _ ->
@@ -156,10 +154,11 @@ class HackathonsAdminActivity : AppCompatActivity() {
             "description" to description,
             "link" to link,
             "imageUrl" to imageUrl,
-            "timestamp" to System.currentTimeMillis()  // Adding timestamp
+            "timestamp" to System.currentTimeMillis()
+
         )
 
-        db.collection("hackathons")
+        db.collection("training")
             .add(hackathonData)
             .addOnSuccessListener {
                 Log.d("Firestore", "Data saved successfully")
@@ -180,6 +179,4 @@ class HackathonsAdminActivity : AppCompatActivity() {
                 ).show()
             }
     }
-
-
 }

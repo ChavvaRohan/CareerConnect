@@ -1,13 +1,9 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.user
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.chavvarohan.careerconnect.databinding.ActivityHomeBinding
-import com.chavvarohan.careerconnect.databinding.ActivityMainBinding
 
 class HomeActivity : AppCompatActivity() {
 
@@ -23,28 +19,28 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.cardViewProfilePic.setOnClickListener {
-            startActivity(Intent(this,FormActivity::class.java))
+            startActivity(Intent(this, FormActivity::class.java))
         }
 
         binding.cardViewHackathons.setOnClickListener {
-            startActivity(Intent(this,HackathonsActivity::class.java))
+            startActivity(Intent(this, HackathonsActivity::class.java))
         }
 
         binding.imageViewSettings.setOnClickListener{
-            startActivity(Intent(this,SettingsActivity::class.java))
+            startActivity(Intent(this, SettingsActivity::class.java))
 
         }
 
         binding.cardViewTrainings.setOnClickListener {
-            startActivity(Intent(this,TrainingActivity::class.java))
+            startActivity(Intent(this, TrainingActivity::class.java))
         }
 
         binding.cardViewHigherEducation.setOnClickListener {
-            startActivity(Intent(this,HigherEducationActivity::class.java))
+            startActivity(Intent(this, HigherEducationActivity::class.java))
         }
 
         binding.cardViewInternships.setOnClickListener {
-            startActivity(Intent(this,InternshipsActivity::class.java))
+            startActivity(Intent(this, InternshipsActivity::class.java))
         }
 
     }

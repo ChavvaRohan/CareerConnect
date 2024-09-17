@@ -1,4 +1,4 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.user
 
 data class Data(
     var companyName: String,

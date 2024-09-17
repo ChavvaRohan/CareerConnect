@@ -1,15 +1,13 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.admin
 
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.chavvarohan.careerconnect.user.Info
 import com.chavvarohan.careerconnect.databinding.ActivityViewHigherEducationUploadsBinding
 import com.google.firebase.firestore.FirebaseFirestore
 

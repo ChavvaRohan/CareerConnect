@@ -1,21 +1,18 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.user
 
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.chavvarohan.careerconnect.databinding.ActivityHigherEducationBinding
+import com.chavvarohan.careerconnect.databinding.ActivityInternshipsBinding
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
-class HigherEducationActivity : AppCompatActivity() {
+class InternshipsActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityHigherEducationBinding
+    private lateinit var binding : ActivityInternshipsBinding
 
     private lateinit var firestore: FirebaseFirestore
     private lateinit var adapter: Adapter2
@@ -23,7 +20,7 @@ class HigherEducationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHigherEducationBinding.inflate(layoutInflater)
+        binding = ActivityInternshipsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         firestore = FirebaseFirestore.getInstance()
@@ -39,12 +36,12 @@ class HigherEducationActivity : AppCompatActivity() {
             it.setDisplayShowHomeEnabled(true)
         }
         // Fetch data from Firestore
-        fetchHigherEducationData()
+        fetchTrainingData()
 
     }
 
-    private fun fetchHigherEducationData() {
-        firestore.collection("higherEducation")
+    private fun fetchTrainingData() {
+        firestore.collection("internship")
             .orderBy("timestamp", Query.Direction.DESCENDING) // Ensure this matches the field in Firestore
             .get()
             .addOnSuccessListener { querySnapshot ->
@@ -61,18 +58,18 @@ class HigherEducationActivity : AppCompatActivity() {
                     hackathonList.add(item)
 
                     // Log each item fetched
-                    Log.d("HigherEducationActivity", "Fetched item: $item")
+                    Log.d("TrainingActivity", "Fetched item: $item")
                 }
 
                 if (hackathonList.isEmpty()) {
-                    Log.d("HigherEducationActivity", "No items found")
+                    Log.d("TrainingActivity", "No items found")
                 }
 
                 adapter.updateData(hackathonList)
 
             }
             .addOnFailureListener { exception ->
-                Log.e("HigherEducationActivity", "Error fetching data: ", exception)
+                Log.e("TrainingActivity", "Error fetching data: ", exception)
                 Toast.makeText(this, "Failed to fetch data: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
     }

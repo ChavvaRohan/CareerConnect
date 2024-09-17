@@ -1,4 +1,4 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.admin
 
 import android.content.Intent
 import android.net.Uri
@@ -7,22 +7,20 @@ import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.chavvarohan.careerconnect.databinding.ActivityTrainingAdminBinding
+import com.chavvarohan.careerconnect.R
+import com.chavvarohan.careerconnect.databinding.ActivityInternshipAdminBinding
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.storage
 import java.util.UUID
 
-class TrainingAdminActivity : AppCompatActivity() {
+class InternshipAdminActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityTrainingAdminBinding
+    private lateinit var binding : ActivityInternshipAdminBinding
 
     private lateinit var storageRef: StorageReference
 
@@ -32,7 +30,7 @@ class TrainingAdminActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityTrainingAdminBinding.inflate(layoutInflater)
+        binding = ActivityInternshipAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         storageRef = Firebase.storage.reference
@@ -54,7 +52,7 @@ class TrainingAdminActivity : AppCompatActivity() {
         }
 
         binding.buttonViewUploads.setOnClickListener {
-            val intent = Intent(this, ViewTrainingUploadsActivity::class.java)
+            val intent = Intent(this, ViewInternshipUploadActivity::class.java)
             startActivity(intent)
         }
 
@@ -65,6 +63,7 @@ class TrainingAdminActivity : AppCompatActivity() {
         }
 
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             finish()
@@ -73,9 +72,9 @@ class TrainingAdminActivity : AppCompatActivity() {
     }
 
     private fun alertDialog() {
-        AlertDialog.Builder(this@TrainingAdminActivity)
-            .setTitle("Upload Hackathon")
-            .setMessage("Are you sure you want to upload this hackathon?")
+        AlertDialog.Builder(this@InternshipAdminActivity)
+            .setTitle("Upload")
+            .setMessage("Are you sure you want to upload ?")
             .setPositiveButton("Yes") { _, _ ->
                 binding.progressBar.visibility = View.VISIBLE
                 val title = binding.textInputEditTextTitleAdmin.text.toString()
@@ -160,7 +159,7 @@ class TrainingAdminActivity : AppCompatActivity() {
 
         )
 
-        db.collection("training")
+        db.collection("internship")
             .add(hackathonData)
             .addOnSuccessListener {
                 Log.d("Firestore", "Data saved successfully")
@@ -176,7 +175,7 @@ class TrainingAdminActivity : AppCompatActivity() {
                 Log.d("Firestore", "Error saving data")
                 Toast.makeText(
                     this,
-                    "Failed to save announcement: ${exception.message}",
+                    "Failed to save internship: ${exception.message}",
                     Toast.LENGTH_SHORT
                 ).show()
             }

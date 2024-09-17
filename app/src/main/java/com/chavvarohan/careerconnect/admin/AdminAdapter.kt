@@ -1,4 +1,4 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.admin
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.chavvarohan.careerconnect.user.Info
+import com.chavvarohan.careerconnect.R
 
 class AdminAdapter(private val list: ArrayList<Info>) : RecyclerView.Adapter<AdminAdapter.HackathonViewHolder>() {
 

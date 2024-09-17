@@ -1,9 +1,10 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.user
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.chavvarohan.careerconnect.MainActivity
 import com.chavvarohan.careerconnect.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore

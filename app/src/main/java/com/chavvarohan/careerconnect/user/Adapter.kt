@@ -1,6 +1,5 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.user
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

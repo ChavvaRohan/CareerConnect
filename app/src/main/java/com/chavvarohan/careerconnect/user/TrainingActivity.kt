@@ -1,21 +1,18 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.user
 
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.chavvarohan.careerconnect.databinding.ActivityInternshipsBinding
+import com.chavvarohan.careerconnect.databinding.ActivityTrainingBinding
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
-class InternshipsActivity : AppCompatActivity() {
+class TrainingActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityInternshipsBinding
+    private lateinit var binding : ActivityTrainingBinding
 
     private lateinit var firestore: FirebaseFirestore
     private lateinit var adapter: Adapter2
@@ -23,7 +20,7 @@ class InternshipsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityInternshipsBinding.inflate(layoutInflater)
+        binding = ActivityTrainingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         firestore = FirebaseFirestore.getInstance()
@@ -44,7 +41,7 @@ class InternshipsActivity : AppCompatActivity() {
     }
 
     private fun fetchTrainingData() {
-        firestore.collection("internship")
+        firestore.collection("training")
             .orderBy("timestamp", Query.Direction.DESCENDING) // Ensure this matches the field in Firestore
             .get()
             .addOnSuccessListener { querySnapshot ->

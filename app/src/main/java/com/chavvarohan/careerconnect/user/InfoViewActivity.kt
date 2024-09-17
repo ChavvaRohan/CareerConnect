@@ -1,11 +1,11 @@
-package com.chavvarohan.careerconnect
+package com.chavvarohan.careerconnect.user
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.chavvarohan.careerconnect.R
 import com.chavvarohan.careerconnect.databinding.ActivityInfoViewBinding
 
 class InfoViewActivity : AppCompatActivity() {
