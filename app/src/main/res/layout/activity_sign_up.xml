@@ -96,6 +96,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edit_text_password" />
 
+        <ProgressBar
+            android:layout_width="35dp"
+            android:id="@+id/progress_bar"
+            android:layout_height="35dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_confirm_password"
+            android:layout_margin="12dp"/>
 
         <Button
             android:id="@+id/button_sign_up"

@@ -75,6 +75,9 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:text="Admin"
             android:textAllCaps="false"
             app:layout_constraintEnd_toStartOf="@id/button_sign_in"
@@ -82,12 +85,25 @@
             app:layout_constraintTop_toBottomOf="@id/edit_text_password"
             app:layout_constraintTop_toTopOf="@id/button_sign_in" />
 
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="35dp"
+            android:visibility="gone"
+            android:layout_height="35dp"
+            android:layout_marginTop="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_password" />
+
         <Button
             android:id="@+id/button_sign_in"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:background="@drawable/button_style"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:text="Student"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"

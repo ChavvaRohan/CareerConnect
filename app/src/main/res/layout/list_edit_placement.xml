@@ -13,7 +13,7 @@
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@id/text_view_date_admin"
-        app:layout_constraintEnd_toStartOf="@id/card_view_pic"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,7 +25,7 @@
         android:text="Date"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@id/card_view_pic"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_view_title_admin" />
 
@@ -37,33 +37,17 @@
         android:text="Description"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@id/card_view_pic"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_view_date_admin" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_pic"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:layout_margin="12dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/image_view_circulars_picture_admin"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@color/black" />
-    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/button_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
         android:text="Delete"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_view_description_admin" />
 
@@ -71,9 +55,9 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_delete"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_delete" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

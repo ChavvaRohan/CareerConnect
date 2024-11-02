@@ -2,10 +2,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#5B8EE8"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="#5B8EE8">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
@@ -20,6 +19,9 @@
             android:layout_margin="18dp"
             app:cardBackgroundColor="@color/black"
             app:cardCornerRadius="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -45,7 +47,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@color/black" />
+                android:src="@drawable/admin_logo2" />
 
         </androidx.cardview.widget.CardView>
 
@@ -55,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_marginBottom="28dp"
-            android:text="Name"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -67,30 +69,30 @@
             android:id="@+id/text_view_admin_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="email@gmail.com"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@id/text_view_admin_name"
             app:layout_constraintTop_toBottomOf="@+id/text_view_admin_name" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_events"
+            android:id="@+id/card_view_placements"
             android:layout_width="320dp"
             android:layout_height="120dp"
             android:layout_marginTop="42dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_view_admin_img">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center"
-                android:text="Events"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:fontFamily="sans-serif-medium"
-                android:textStyle="bold" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/_placement" />
 
             <View
                 android:layout_width="match_parent"
@@ -101,30 +103,23 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_placements"
+            android:id="@+id/card_view_internships"
             android:layout_width="150dp"
             android:layout_height="120dp"
             android:layout_marginTop="42dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="6dp"
             app:layout_constraintEnd_toStartOf="@id/card_view_hackathons"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_view_events">
+            app:layout_constraintTop_toBottomOf="@id/card_view_placements">
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="85dp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginBottom="8dp"
-                android:text="Placements"
-                android:textColor="@color/black"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/internship" />
 
             <View
                 android:layout_width="match_parent"
@@ -139,26 +134,19 @@
             android:layout_width="150dp"
             android:layout_height="120dp"
             android:layout_marginTop="42dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/card_view_placements"
-            app:layout_constraintTop_toBottomOf="@id/card_view_events">
+            app:layout_constraintStart_toEndOf="@id/card_view_internships"
+            app:layout_constraintTop_toBottomOf="@id/card_view_placements">
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                 />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginBottom="8dp"
-                android:text="Hackathons"
-                android:fontFamily="sans-serif-medium"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hackathon" />
 
             <View
                 android:layout_width="match_parent"
@@ -174,27 +162,30 @@
             android:layout_width="150dp"
             android:layout_height="120dp"
             android:layout_marginTop="22dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="6dp"
             app:layout_constraintEnd_toStartOf="@id/card_view_higher_education"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_view_placements">
+            app:layout_constraintTop_toBottomOf="@+id/card_view_internships">
 
             <ImageView
-                android:layout_width="90dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/training_" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="42dp"
                 android:layout_marginBottom="8dp"
-                android:text="Training"
-                android:textColor="@color/black"
-                android:textSize="14sp"
                 android:fontFamily="sans-serif-medium"
+                android:text="Training"
+                android:textColor="@color/white"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <View
@@ -210,26 +201,29 @@
             android:layout_width="150dp"
             android:layout_height="120dp"
             android:layout_marginTop="22dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/card_View_trainings"
             app:layout_constraintTop_toBottomOf="@id/card_view_hackathons">
 
             <ImageView
-                android:layout_width="90dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/higher_edu_images" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="42dp"
                 android:layout_marginBottom="8dp"
-                android:text="Higher Education"
-                android:textColor="@color/black"
                 android:fontFamily="sans-serif-medium"
+                android:text="Higher\nEducation"
+                android:textColor="@color/white"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -240,51 +234,6 @@
                 android:background="@color/black" />
 
         </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_internships"
-            android:layout_width="150dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="22dp"
-            app:cardCornerRadius="6dp"
-            app:layout_constraintStart_toStartOf="@id/card_View_trainings"
-            app:layout_constraintTop_toBottomOf="@+id/card_View_trainings">
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="75dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginBottom="8dp"
-                android:text="Internships"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:fontFamily="sans-serif-medium"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_gravity="bottom"
-                android:background="@color/black" />
-
-        </androidx.cardview.widget.CardView>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_view_internships" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

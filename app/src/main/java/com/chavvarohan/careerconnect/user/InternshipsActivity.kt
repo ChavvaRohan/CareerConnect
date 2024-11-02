@@ -25,7 +25,6 @@ class InternshipsActivity : AppCompatActivity() {
 
         firestore = FirebaseFirestore.getInstance()
 
-        // Setting up the RecyclerView
         adapter = Adapter2(trainingList)
         binding.recyclerViewHackathon.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewHackathon.adapter = adapter
@@ -35,14 +34,13 @@ class InternshipsActivity : AppCompatActivity() {
             it.setDisplayHomeAsUpEnabled(true)
             it.setDisplayShowHomeEnabled(true)
         }
-        // Fetch data from Firestore
         fetchTrainingData()
 
     }
 
     private fun fetchTrainingData() {
         firestore.collection("internship")
-            .orderBy("timestamp", Query.Direction.DESCENDING) // Ensure this matches the field in Firestore
+            .orderBy("timestamp", Query.Direction.DESCENDING)
             .get()
             .addOnSuccessListener { querySnapshot ->
                 val hackathonList = ArrayList<Info>()
@@ -52,12 +50,11 @@ class InternshipsActivity : AppCompatActivity() {
                     val description = document.getString("description") ?: ""
                     val imageUrl = document.getString("imageUrl") ?: ""
                     val link = document.getString("link") ?: ""
-                    val timestamp = document.getLong("timestamp") ?: System.currentTimeMillis() // Default value
+                    val timestamp = document.getLong("timestamp") ?: System.currentTimeMillis()
 
                     val item = Info(imageUrl, title, date, description, link, timestamp)
                     hackathonList.add(item)
 
-                    // Log each item fetched
                     Log.d("TrainingActivity", "Fetched item: $item")
                 }
 

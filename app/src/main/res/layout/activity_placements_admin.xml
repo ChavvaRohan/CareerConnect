@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        tools:context=".user.PlacementsAdminActivity">
+        tools:context=".admin.PlacementsAdminActivity">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
@@ -33,10 +33,10 @@
             app:layout_constraintTop_toBottomOf="@id/toolbar">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/text_input_edit_text_title_admin"
+                android:id="@+id/text_input_edit_text_company_name_admin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Title"
+                android:hint="Company Name"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,7 +67,7 @@
             android:layout_marginEnd="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_input_layout_link">
+            app:layout_constraintTop_toBottomOf="@id/text_input_layout_reg_link">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/text_input_edit_text_description"
@@ -81,17 +81,40 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_layout_link"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="22dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/text_input_layout_description"
             app:layout_constraintTop_toBottomOf="@id/text_input_layout_date">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/text_input_edit_text_date_link"
+                android:id="@+id/text_input_edit_text_link"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="link"
+                android:hint="Google Sheet Link"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_reg_link"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/text_input_layout_description"
+            app:layout_constraintTop_toBottomOf="@id/text_input_layout_link">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input_edit_text_reg_link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Registration Link"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 

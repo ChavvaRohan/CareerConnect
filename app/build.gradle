@@ -48,6 +48,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage-ktx:21.0.0'
     implementation 'com.google.firebase:firebase-auth:23.0.0'
     implementation 'com.google.firebase:firebase-storage:21.0.0'
+
+    implementation 'com.android.volley:volley:1.2.1'
     testImplementation 'junit:junit:4.13.2'
 
     implementation 'com.github.bumptech.glide:glide:4.15.1'

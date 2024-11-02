@@ -9,47 +9,50 @@ class Adapter(private val data: List<Data>) : RecyclerView.Adapter<Adapter.DataV
 
     private var mListener: OnItemClickListener? = null
 
+    // Interface for click events
     interface OnItemClickListener {
-
         fun onRegisterClick(position: Int)
-
     }
 
+    // Method to set the listener
     fun setOnItemClickListener(listener: OnItemClickListener) {
         mListener = listener
     }
 
+    // Create view holder instance and inflate the layout
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
         val binding = ListItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return DataViewHolder(binding, mListener)
+        return DataViewHolder(binding)
     }
 
+    // Bind data to the view holder
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         holder.bind(data[position])
     }
 
+    // Return the total number of items
     override fun getItemCount(): Int {
         return data.size
     }
 
-    inner class DataViewHolder(
-        private val binding: ListItemsBinding,
-        private val listener: OnItemClickListener?
-    ) : RecyclerView.ViewHolder(binding.root) {
+    // ViewHolder class to hold the view references
+    inner class DataViewHolder(private val binding: ListItemsBinding) : RecyclerView.ViewHolder(binding.root) {
 
         init {
-
+            // Register click listener on the card view
             binding.cardViewRegister.setOnClickListener {
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
-                    listener?.onRegisterClick(position)
+                    mListener?.onRegisterClick(position)
                 }
             }
         }
 
+        // Method to bind data to the views
         fun bind(data: Data) {
             binding.textViewCompanyName.text = data.companyName
-            binding.textViewQuote.text = data.companyQuote
+            binding.textViewDate.text = data.date
+            // Optionally bind other data (e.g., description, link) if needed
         }
     }
 }

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.CareerConnect"
         tools:targetApi="31">
         <activity
+            android:name=".ViewPlacementsUploadActivity"
+            android:exported="false" />
+        <activity
             android:name=".user.InternshipsActivity"
             android:exported="false" />
         <activity
@@ -48,7 +51,7 @@
             android:name=".admin.HackathonsAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".user.PlacementsAdminActivity"
+            android:name=".admin.PlacementsAdminActivity"
             android:exported="false" />
         <activity
             android:name=".admin.EventsAdminActivity"

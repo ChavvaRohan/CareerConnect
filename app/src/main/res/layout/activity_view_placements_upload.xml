@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user.PlacementsActivity">
+    tools:context=".ViewPlacementsUploadActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -15,26 +15,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/baseline_arrow_back_ios_24"
         app:navigationIconTint="@color/black"
-        app:title="Placements" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:id="@+id/view"
+        app:title=" " />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/empty_state_text_view"
+        android:text="No uploads available"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <ProgressBar
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:visibility="gone"
+        android:id="@+id/progress_bar"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_placements"
         android:layout_width="match_parent"
+        android:id="@+id/recycler_view_admin_uploads"
         android:layout_height="match_parent"
-        android:layout_marginTop="54dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view"
-        tools:listitem="@layout/list_items" />
+        app:layout_constraintStart_toEndOf="parent"
+        android:layout_marginTop="52dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:listitem="@layout/list_edit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

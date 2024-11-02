@@ -64,6 +64,9 @@
             android:id="@+id/constraint_layout_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:padding="12dp">
 
             <ImageView
@@ -105,6 +108,9 @@
             android:id="@+id/constraint_layout_resume"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:padding="12dp">
 
             <ImageView
@@ -146,6 +152,9 @@
             android:id="@+id/constraint_layout_support"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:padding="12dp">
 
             <ImageView
@@ -187,6 +196,9 @@
             android:id="@+id/constraint_layout_about"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:padding="12dp">
 
             <ImageView
@@ -228,6 +240,9 @@
             android:id="@+id/constraint_layout_logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:padding="12dp">
 
             <ImageView

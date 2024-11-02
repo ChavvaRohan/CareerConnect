@@ -47,6 +47,7 @@ class TrainingAdminActivity : AppCompatActivity() {
             pickImageLauncher.launch("image/*")
         }
 
+
         binding.buttonSave.setOnClickListener {
             alertDialog()
         }
