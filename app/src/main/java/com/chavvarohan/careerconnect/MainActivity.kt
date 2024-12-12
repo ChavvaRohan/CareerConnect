@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
-        // Check if user is already signed in and email is verified
         if (auth.currentUser != null && auth.currentUser!!.isEmailVerified) {
             startActivity(Intent(this, HomeActivity::class.java))
             finish()

@@ -24,23 +24,17 @@ class ViewInternshipUploadActivity : AppCompatActivity() {
         binding = ActivityViewInternshipUploadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        // Initialize RecyclerView
         rvMain = binding.recyclerViewAdminUploads
         rvMain.layoutManager = LinearLayoutManager(this)
         rvMain.setHasFixedSize(true)
 
-        // Initialize Firestore
         db = FirebaseFirestore.getInstance()
 
-        // Initialize adapter
         adapter = AdminAdapter(ArrayList())
         rvMain.adapter = adapter
 
-        // Retrieve data from Firestore
         fetchHigherEducationFromFirestore()
 
-        // Set up the delete event handler
         adapter.onDeleteClick = { item ->
             deleteHackathonFromFirestore(item)
         }
@@ -61,7 +55,7 @@ class ViewInternshipUploadActivity : AppCompatActivity() {
     }
 
     private fun fetchHigherEducationFromFirestore() {
-        binding.progressBar.visibility = View.VISIBLE  // Show progress bar
+        binding.progressBar.visibility = View.VISIBLE
 
         db.collection("internship")
             .get()
@@ -70,7 +64,7 @@ class ViewInternshipUploadActivity : AppCompatActivity() {
                 if (querySnapshot.isEmpty) {
                     Log.d("Firestore", "No internship found.")
                     adapter.updateData(hackathonsList)
-                    binding.emptyStateTextView.visibility = View.VISIBLE  // Show empty state message
+                    binding.emptyStateTextView.visibility = View.VISIBLE
                 } else {
                     for (document in querySnapshot.documents) {
                         val title = document.getString("title") ?: ""
@@ -82,14 +76,14 @@ class ViewInternshipUploadActivity : AppCompatActivity() {
                         hackathonsList.add(item)
                     }
                     adapter.updateData(hackathonsList)
-                    binding.emptyStateTextView.visibility = View.GONE  // Hide empty state message
+                    binding.emptyStateTextView.visibility = View.GONE
                 }
-                binding.progressBar.visibility = View.GONE  // Hide progress bar
+                binding.progressBar.visibility = View.GONE
             }
             .addOnFailureListener { exception ->
                 Log.e("Firestore", "Error getting internship", exception)
-                binding.progressBar.visibility = View.GONE  // Hide progress bar
-                binding.emptyStateTextView.visibility = View.VISIBLE  // Show empty state message
+                binding.progressBar.visibility = View.GONE
+                binding.emptyStateTextView.visibility = View.VISIBLE
             }
     }
 

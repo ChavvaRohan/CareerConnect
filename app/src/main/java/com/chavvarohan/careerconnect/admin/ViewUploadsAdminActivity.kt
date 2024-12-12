@@ -23,22 +23,17 @@ class ViewUploadsAdminActivity : AppCompatActivity() {
         binding = ActivityViewUploadsAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize RecyclerView
         rvMain = binding.recyclerViewAdminUploads
         rvMain.layoutManager = LinearLayoutManager(this)
         rvMain.setHasFixedSize(true)
 
-        // Initialize Firestore
         db = FirebaseFirestore.getInstance()
 
-        // Initialize adapter
         adapter = AdminAdapter(ArrayList())
         rvMain.adapter = adapter
 
-        // Retrieve data from Firestore
         fetchHackathonsFromFirestore()
 
-        // Set up the delete event handler
         adapter.onDeleteClick = { item ->
             deleteHackathonFromFirestore(item)
         }
@@ -58,17 +53,17 @@ class ViewUploadsAdminActivity : AppCompatActivity() {
     }
 
     private fun fetchHackathonsFromFirestore() {
-        binding.progressBar.visibility = View.VISIBLE  // Show progress bar
+        binding.progressBar.visibility = View.VISIBLE
 
         db.collection("hackathons")
-            .orderBy("timestamp", com.google.firebase.firestore.Query.Direction.DESCENDING)  // Sorting by timestamp
+            .orderBy("timestamp", com.google.firebase.firestore.Query.Direction.DESCENDING)
             .get()
             .addOnSuccessListener { querySnapshot ->
                 val hackathonsList = ArrayList<Info>()
                 if (querySnapshot.isEmpty) {
                     Log.d("Firestore", "No hackathons found.")
                     adapter.updateData(hackathonsList)
-                    binding.emptyStateTextView.visibility = View.VISIBLE  // Show empty state message
+                    binding.emptyStateTextView.visibility = View.VISIBLE
                 } else {
                     for (document in querySnapshot.documents) {
                         val title = document.getString("title") ?: ""
@@ -81,14 +76,14 @@ class ViewUploadsAdminActivity : AppCompatActivity() {
                         hackathonsList.add(item)
                     }
                     adapter.updateData(hackathonsList)
-                    binding.emptyStateTextView.visibility = View.GONE  // Hide empty state message
+                    binding.emptyStateTextView.visibility = View.GONE
                 }
-                binding.progressBar.visibility = View.GONE  // Hide progress bar
+                binding.progressBar.visibility = View.GONE
             }
             .addOnFailureListener { exception ->
                 Log.e("Firestore", "Error getting hackathons", exception)
-                binding.progressBar.visibility = View.GONE  // Hide progress bar
-                binding.emptyStateTextView.visibility = View.VISIBLE  // Show empty state message
+                binding.progressBar.visibility = View.GONE
+                binding.emptyStateTextView.visibility = View.VISIBLE
             }
     }
 
@@ -112,7 +107,7 @@ class ViewUploadsAdminActivity : AppCompatActivity() {
                         document.reference.delete()
                             .addOnSuccessListener {
                                 Log.d("Firestore", "DocumentSnapshot successfully deleted!")
-                                fetchHackathonsFromFirestore() // Refresh the list
+                                fetchHackathonsFromFirestore()
                             }
                             .addOnFailureListener { e ->
                                 Log.w("Firestore", "Error deleting document", e)

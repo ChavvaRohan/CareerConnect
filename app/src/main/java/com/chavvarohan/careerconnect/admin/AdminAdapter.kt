@@ -33,11 +33,10 @@ class AdminAdapter(private val list: ArrayList<Info>) : RecyclerView.Adapter<Adm
         holder.date.text = currentItem.date
         holder.title.text = currentItem.title
 
-        // Load image using Glide
         Glide.with(holder.itemView.context)
             .load(currentItem.image)
-            .placeholder(R.drawable.placeholder) // Placeholder image while loading
-            .error(R.drawable.placeholder) // Image to show if loading fails
+            .placeholder(R.drawable.placeholder)
+            .error(R.drawable.placeholder)
             .into(holder.imageView)
 
         holder.deleteButton.setOnClickListener {

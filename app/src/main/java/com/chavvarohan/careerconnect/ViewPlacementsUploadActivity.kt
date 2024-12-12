@@ -37,14 +37,11 @@ class ViewPlacementsUploadActivity : AppCompatActivity() {
 
         db = FirebaseFirestore.getInstance()
 
-        // Initialize adapter
         adapter = AdminPlacementAdapter(ArrayList())
         rvMain.adapter = adapter
 
-        // Retrieve data from Firestore
         fetchHigherEducationFromFirestore()
 
-        // Set up the delete event handler
         adapter.onDeleteClick = { item ->
             deleteHackathonFromFirestore(item)
         }
@@ -65,7 +62,7 @@ class ViewPlacementsUploadActivity : AppCompatActivity() {
     }
 
     private fun fetchHigherEducationFromFirestore() {
-        binding.progressBar.visibility = View.VISIBLE  // Show progress bar
+        binding.progressBar.visibility = View.VISIBLE
 
         db.collection("placements")
             .get()
@@ -75,7 +72,7 @@ class ViewPlacementsUploadActivity : AppCompatActivity() {
                     Log.d("Firestore", "No internship found.")
                     adapter.updateData(placementsList)
                     binding.emptyStateTextView.visibility =
-                        View.VISIBLE  // Show empty state message
+                        View.VISIBLE
                 } else {
                     for (document in querySnapshot.documents) {
                         val company = document.getString("company") ?: ""
@@ -86,21 +83,20 @@ class ViewPlacementsUploadActivity : AppCompatActivity() {
                         placementsList.add(item)
                     }
                     adapter.updateData(placementsList)
-                    binding.emptyStateTextView.visibility = View.GONE  // Hide empty state message
+                    binding.emptyStateTextView.visibility = View.GONE
                 }
-                binding.progressBar.visibility = View.GONE  // Hide progress bar
+                binding.progressBar.visibility = View.GONE
             }
             .addOnFailureListener { exception ->
                 Log.e("Firestore", "Error getting internship", exception)
-                binding.progressBar.visibility = View.GONE  // Hide progress bar
-                binding.emptyStateTextView.visibility = View.VISIBLE  // Show empty state message
+                binding.progressBar.visibility = View.GONE
+                binding.emptyStateTextView.visibility = View.VISIBLE
             }
     }
 
     private fun deleteHackathonFromFirestore(item: PlacementInfo) {
         Log.d("Firestore", "Attempting to delete company: ${item.company}")
 
-        // Use "placements" collection to match the data retrieval
         db.collection("placements")
             .whereEqualTo("company", item.company)
             .whereEqualTo("description", item.description)

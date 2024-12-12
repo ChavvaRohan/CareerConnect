@@ -2,12 +2,12 @@
 <project version="4">
   <component name="deploymentTargetSelector">
     <selectionStates>
-      <SelectionState runConfigName="Career Connect">
+      <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-10-14T07:09:22.143422900Z">
+        <DropdownSelection timestamp="2024-11-03T05:33:51.497379Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\rohan\.android\avd\Pixel_4a_API_34.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=/Users/rohan/.android/avd/Pixel_4a_API_34.avd" />
             </handle>
           </Target>
         </DropdownSelection>
